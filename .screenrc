@@ -1,0 +1,57 @@
+# enable background-color-erase setting.
+defbce on
+#タームの種類
+term xterm-256color
+termcapinfo xterm-256color 'is=^[r^[mJ^[H^[?7h^[?1;4;6l'
+
+# prefix キーの設定 Ctrl + t
+escape ^Tt
+
+# 文字コード
+defutf8 on
+defkanji utf-8
+encoding utf-8 utf-8
+defencoding utf-8
+
+# 現在のウィンドウに対して可視ベルの設定します。
+vbell off
+
+# ハングアップしたときにscreenは自動的にデタッチ
+autodetach on
+
+# 起動時に著作権表示
+startup_message off
+
+# スクロールバックバッファの大きさ
+defscrollback 1000
+
+# シェル
+#shell $SHELL
+shell /bin/zsh
+
+# 画面の一番下の行を反転させてハードステータス表示
+hardstatus on
+#hardstatus alwayslastline "%{= gk}[%m/%d %02c:%s] %{gW} %-w%{= wk}%n %t%{-}%+w %=%{gk}$USER@$HOSTNAME[$LANG] (%l) "
+#hardstatus alwayslastline "%{= gk}[%m/%d %02c:%s] %{gW} %-w%{= wk}%n %t%{-}%+w %=%{gk}[$LANG] (%l) "
+#hardstatus alwayslastline "%{= Wb}[%m/%d %02c:%s]%016=%{= WK}%-w%50>%{= bW}%n %t%{-}%+w%-0< %="
+#hardstatus alwayslastline "%-w%{= ck}%n %t%{-}%+w"
+#hardstatus alwayslastline "%`%-w%{=b bw}%n %t%{-}%+w"
+#hardstatus alwayslastline "%m/%d %02c:%s %{= .g}%{-} %L=%-w%45L>%{=u g.}%n %t%{-}%+w %-17<%=%{= .y} [$LANG] (%l) "
+#hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+hardstatus alwayslastline "%m/%d %02c:%s %{= .g}%{-} %L=%-w%45L>%{=u g.}%n %t%{-}%+w %-17<%=%{= .y} [$LANG]"
+
+#caption always "%{= Rk} %?%F%{b kr}%? %?%h%:%t (screen #%n)%? %{-}"
+#caption always "%{=r dd}%-Lw%40L>%?%F%{=b dR}%:[%? %n%f %t %?%F%{-}%:]%?%+Lw"
+#caption always "%{= wg} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+#caption always '%?%F%{= bw}%:%{= wk}%?%2n%f%07=%t%='
+#caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+#caption always "%?%F%{= wk}%:%{= ww}%?%-w%{=u Wk}%n %t%{-}%+w"
+
+# ログファイル
+logfile '$HOME/log/screenlog.%H.%Y%m%d-%02c:%s-%n.%t.log'
+logtstamp on
+logtstamp string "\n-- SCREEN [%Y/%m/%d %02c:%s] %n:%t --\n"
+
+# スクリーンのタイトル
+#shelltitle '$ |*'
+shelltitle "% |*"
