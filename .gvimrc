@@ -1,2 +1,2 @@
 colorscheme wombat256
-set transparency=30
+set transparency=20

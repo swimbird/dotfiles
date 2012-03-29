@@ -20,6 +20,7 @@ NeoBundle 'git://github.com/vim-scripts/taglist.vim.git'
 "js
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'itspriddle/vim-javascript-indent'
+NeoBundle 'scrooloose/syntastic'
 
 "-----------------------------------------------------------------
 " サイトローカルな設定($VIM/gvimrc_local.vim)があれば読み込む。読み込んだ後
@@ -210,7 +211,7 @@ set ruler
 " タブや改行を表示 (list:表示)
 set list
 " どの文字でタブや改行を表示するかを設定
-set listchars=tab:>\ ,eol:<,nbsp:%,trail:-
+set listchars=tab:>\ ,nbsp:%,trail:-,precedes:<
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 
 " 全角スペースの可視化
@@ -304,3 +305,8 @@ set autoread
 "編集中でも他のファイルを開けるようにする
 set hidden
 
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['ruby', 'javascript'],
+                           \ 'passive_filetypes': [] }
+
+let g:syntastic_javascript_jslint_conf = "--white --undef --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars"
