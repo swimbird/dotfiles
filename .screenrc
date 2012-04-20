@@ -55,3 +55,6 @@ logtstamp string "\n-- SCREEN [%Y/%m/%d %02c:%s] %n:%t --\n"
 # スクリーンのタイトル
 #shelltitle '$ |*'
 shelltitle "% |*"
+
+# スクロールできるようにする
+termcapinfo xterm* ti@:te@
