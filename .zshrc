@@ -115,7 +115,7 @@ setopt nolistbeep
 #MacVim-KaoriYaをvimとして起動
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias gvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 preexec () {
   [ ${STY} ] && echo -ne "\ek${1%% *}\e\\"
