@@ -21,6 +21,11 @@ NeoBundle 'git://github.com/vim-scripts/taglist.vim.git'
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'itspriddle/vim-javascript-indent'
 NeoBundle 'scrooloose/syntastic'
+"explore
+NeoBundle 'scrooloose/nerdtree.git'
+"python
+NeoBundle 'lambdalisue/vim-django-support'
+NeoBundle 'git://github.com/vim-scripts/pythoncomplete.git'
 
 "-----------------------------------------------------------------
 " サイトローカルな設定($VIM/gvimrc_local.vim)があれば読み込む。読み込んだ後
@@ -310,3 +315,26 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'passive_filetypes': [] }
 
 let g:syntastic_javascript_jslint_conf = "--white --undef --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars"
+
+"nerd tree
+nmap <Leader>n :NERDTreeToggle<CR>
+
+"python設定
+filetype plugin on
+autocmd FileType python setl autoindent
+autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setl expandtab tabstop=8 shiftwidth=4 softtabstop=4
+autocmd FileType python setl omnifunc=pythoncomplete#Complete
+
+" :Gb <args> でGrepBufferする
+command! -nargs=1 Gb :GrepBuffer <args>
+" カーソル下の単語をGrepBufferする
+nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
+
+" :Gr <args>でカレントディレクトリ以下を再帰的にgrepする
+command! -nargs=1 Gr :Rgrep <args> *<Enter><CR>
+" カーソル下の単語をgrepする
+nnoremap <silent> <C-g><C-r> :<C-u>Rgrep<Space><C-r><C-w> *<Enter><CR>
+
+let Grep_Skip_Dirs = '.svn .git'
+let Grep_Skip_Files = '*.bak *~'
