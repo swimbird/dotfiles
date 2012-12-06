@@ -10,8 +10,19 @@ export LANG=ja_JP.UTF-8
 ##
 alias rm="rm -i"
 alias mv='mv -v'
+
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
+
+case "${OSTYPE}" in
+freebsd*|darwin*)
+    alias ls="ls -G -w"
+    ;;
+linux*)
+    alias ls="ls --color"
+    ;;
+esac
+
 alias ll="ls -al"
 alias du="du -h"
 alias df="df -h"
