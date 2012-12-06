@@ -53,8 +53,8 @@ local      DEFAULT=$'%{\e[1;m%}'
 ##
 # プロンプトの表示
 ##
-PROMPT="$GREEN%m$DEFAULT:$BROWN%n$DEFAULT%% $DEFAULT"
-RPROMPT="$LIGHT_PURPLE%~$DEFAULT"
+PROMPT="$GREEN%m$WHITE:$BROWN%n$WHITE%% $WHITE"
+RPROMPT="$LIGHT_PURPLE%~$WHITE"
 SPROMPT="correct: %R -> %r ? "
 
 
