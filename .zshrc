@@ -131,3 +131,11 @@ alias gvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@
 preexec () {
   [ ${STY} ] && echo -ne "\ek${1%% *}\e\\"
 }
+
+
+#=============================
+# source zsh-syntax-highlighting
+#=============================
+if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
