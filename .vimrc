@@ -17,6 +17,8 @@ NeoBundle 'git://github.com/thinca/vim-ref.git'
 NeoBundle 'git://github.com/tsaleh/vim-align.git'
 NeoBundle 'git://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'git://github.com/vim-scripts/taglist.vim.git'
+" coloscheme
+NeoBundle 'git://github.com/vim-scripts/wombat256.vim.git'
 "js
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'itspriddle/vim-javascript-indent'
@@ -245,7 +247,7 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 " タイトルを表示
 set title
 " カラーテーマ
-colorscheme wombat256
+colorscheme wombat256mod
 " クリップボードの共有
 set clipboard=unnamed
 " MS-WindowsのCTRL-X、CTRL-CおよびCTRL-V
