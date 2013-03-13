@@ -29,6 +29,8 @@ NeoBundle 'scrooloose/nerdtree.git'
 "python
 NeoBundle 'lambdalisue/vim-django-support'
 NeoBundle 'git://github.com/vim-scripts/pythoncomplete.git'
+"vim
+NeoBundle 'git://github.com/Lokaltog/powerline.git'
 
 "-----------------------------------------------------------------
 " サイトローカルな設定($VIM/gvimrc_local.vim)があれば読み込む。読み込んだ後
