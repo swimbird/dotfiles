@@ -17,6 +17,7 @@ NeoBundle 'git://github.com/thinca/vim-ref.git'
 NeoBundle 'git://github.com/tsaleh/vim-align.git'
 NeoBundle 'git://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'git://github.com/vim-scripts/taglist.vim.git'
+NeoBundle 'git://github.com/elzr/vim-json.git'
 " coloscheme
 NeoBundle 'git://github.com/vim-scripts/wombat256.vim.git'
 NeoBundle 'w0ng/vim-hybrid'
@@ -31,6 +32,8 @@ NeoBundle 'lambdalisue/vim-django-support'
 NeoBundle 'git://github.com/vim-scripts/pythoncomplete.git'
 "vim
 NeoBundle 'git://github.com/Lokaltog/powerline.git'
+"coffee
+NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 
 "-----------------------------------------------------------------
 " サイトローカルな設定($VIM/gvimrc_local.vim)があれば読み込む。読み込んだ後
@@ -331,6 +334,9 @@ autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl expandtab tabstop=8 shiftwidth=4 softtabstop=4
 autocmd FileType python setl omnifunc=pythoncomplete#Complete
+
+"coffee設定
+autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
 " :Gb <args> でGrepBufferする
 command! -nargs=1 Gb :GrepBuffer <args>
